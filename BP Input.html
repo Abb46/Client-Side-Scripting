@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<head>Blood pressure Input</head>
+
+<style>
+body {background-color: teal;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+h1   {	padding: 80px;
+		color: maroon;
+		font-family: "Century Gothic";
+		font-size: 100%;
+		text-align: center;
+		font-style: normal;
+		font-variant: normal; 
+		font-weight: 100; 
+		line-height: 26.4px;
+				}
+				
+h2   {	padding: 10px;
+		color: maroon;
+		font-family: "Century Gothic";
+		font-size: 100%;
+		text-align: center;
+		font-style : normal;
+		font-variant: normal;
+		font-weight: 100;
+		line-height: 20px;
+				}
+				
+h3   { padding: 10px;
+		color: maroon;
+		font-family: "Century Gothic";
+		font-size: 100%;
+		text-align: center;
+		font-style : normal;
+		font-variant: normal;
+		font-weight: 100;
+		line-height: 20px
+				}
+		
+p    {color: black;
+		border: 100px red;
+		
+		margin:100px;
+}
+
+#bp	{
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+
+}
+
+#bloodP {
+
+	margin-left: 100px;
+
+
+}
+
+</style>
+
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+</head>
+
+<body>
+
+
+<div class="topnav">
+  <a class="Home" href="bloodpressure1.html">Home</a>
+  <a href="Exercise.html">Exercise</a>
+  <a href="BP Input.html">Input Blood Pressure</a>
+  <a href="Blood Pressure Slide Show.html">Blood Pressure Slide Show</a>
+  <a href="About Us.html">About Us</a>
+</div>
+<br>
+<html>
+
+<title>Blood Pressure Input</title>
+<script type="text/javascript"> 
+function display_c(){
+var refresh=1000; // Refresh rate in milli seconds
+mytime=setTimeout('display_ct()',refresh)
+}
+
+function display_ct() {
+var x = new Date()
+document.getElementById('ct').innerHTML = x;
+display_c();
+ }
+</script>
+
+
+<body onload=display_ct();>
+<span id='ct' ></span>
+
+</body>
+</html>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<h1>Input Your Blood Pressure</h1>
+
+<p>Input your blood pressure reading on this page, and we will tell you if your blood pressure is in the normal range. Blood pressure is measured in systolic and diastolic millimeters of Mercury (mm hg). When your heart beats, it squeezes and pushes blood through your arteries to the rest of your body. This force creates pressure on those blood vessels, and that's your systolic blood pressure.
+
+A normal systolic pressure is below 120.
+
+A reading of 120-129 is elevated.
+
+130-139 is stage 1 high blood pressure (also called hypertension).
+
+140 or more is stage 2 hypertension.
+
+180 or more is a hypertensive crisis. Call 911.</p>
+<br>
+<p>The diastolic reading, or the bottom number, is the pressure in the arteries when the heart rests between beats. This is the time when the heart fills with blood and gets oxygen.A normal diastolic blood pressure is lower than 80. But even if your diastolic number is lower than 80, you can have elevated blood pressure if the systolic reading is 120-129.
+
+80-89 is stage 1 hypertension.
+
+90 or more is stage 2 hypertension.
+
+120 or more is a hypertensive crisis. Call 911.</p>
+<br>
+<br>
+
+<p>Input your blood pressuere reading and click the button:</p>
+
+<div id="bloodP">
+<input id="blood"/>
+
+<button onclick="myFunction()">submit</button>
+
+<p id="demo"></p>
+
+</div>
+
+<script>
+function myFunction() {
+  
+  var blood = document.getElementById("blood").value;
+  
+  if (document.getElementById("blood").value >= 90 || document.getElementById("blood").value <= 120) {
+  
+  
+  document.getElementById("demo").innerHTML = "Your blood pressure is just right.";
+  
+  }
+  
+  if (document.getElementById("blood").value > 120) {
+  
+  document.getElementById("demo").innerHTML = "Your blood pressure is too high.";
+  
+  }
+  
+  if (document.getElementById("blood").value < 90) {
+  
+  document.getElementById("demo").innerHTML = " Your blood pressure is too Low.";
+  
+  }
+  
+  
+  }
+  
+  
+  
+  
+
+</script>
+<br>
+<img src="images/bpc.1.jpg" id="bp"/>
+
+
+
+</body>
+</html>
